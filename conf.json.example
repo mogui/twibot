@@ -1,0 +1,17 @@
+{}
+  "consumer_key": "XXX",
+  "consumer_secret": "XXX",
+  "token": "XXX",
+  "token_secret": "XXX",
+  "authorized_account": ["you"]
+  "on_dm": [
+    {
+      "name": "Test Command",
+      "match": "^test",
+      "script": "ls",
+      "reply": true,
+      "case": true
+    }
+  ],
+  "on_mentions": []
+}
