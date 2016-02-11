@@ -89,12 +89,10 @@ Any form of contribution is welcome and appreciated, though I prefer the standar
 
 ## Copyright
 Copyright © 2012 Niko Usai. See LICENSE for details.   
-WAMP is trademark of [Tavendo GmbH][tavendo].
-
 
 
 [twibot]: http://github.com/mogui/twibot
 [twitter]: https://twitter.com
-[account_tutorial]: #wiki
+[account_tutorial]: https://github.com/mogui/twibot/wiki/Account-Tutorial
 [golang]: https://golang.org/doc/install
-[config]: https://github.com/mogui/twibot/blob/master/conf.example.json
+[config]: https://github.com/mogui/twibot/blob/master/conf.json.example
