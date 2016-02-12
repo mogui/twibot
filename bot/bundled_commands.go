@@ -3,7 +3,7 @@ package bot
 import (
 	"bytes"
 	"fmt"
-	"github.com/dougnukem/go-twitter/twitter"
+	"github.com/dghubble/go-twitter/twitter"
 )
 
 // BundledCommands is an array of bundled actions of the bot
@@ -16,7 +16,7 @@ var BundledCommands = []Action{
 		Bundled: true,
 		BundledCommand: func(text string, user *twitter.User, app *Twibot) {
 			// reply with pong
-			app.client.DirectMessages.New(twitter.DirectMessageNewParams{
+			app.client.DirectMessages.New(&twitter.DirectMessageNewParams{
 				ScreenName: user.ScreenName,
 				Text:       "PONG",
 			})
@@ -39,7 +39,7 @@ var BundledCommands = []Action{
 				buffer.WriteString(fmt.Sprintf("%02d. [%s]: %s\n", i+1, action.Name, action.Match))
 			}
 
-			app.client.DirectMessages.New(twitter.DirectMessageNewParams{
+			app.client.DirectMessages.New(&twitter.DirectMessageNewParams{
 				ScreenName: user.ScreenName,
 				Text:       buffer.String(),
 			})

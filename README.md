@@ -1,13 +1,13 @@
 
 # What is it?
 
-[twibot](twibot) is a light [Twitter](twitter) bot writtenin Go, that can execute configured commands by *Direct message* or *Mention* him with a tweet.   
+[twibot](http://github.com/mogui/twibot) is a light [Twitter](https://twitter.com) bot writtenin Go, that can execute configured commands by *Direct message* or *Mention* him with a tweet.   
 You just have to create a dedicated twitter account (see tutorial [here](https://github.com/mogui/twibot/wiki/Account-Tutorial)) create a configuration file with authentication credential, the authorized twitter account, and the description of the **commands** your bot can execute.
 
 Its main aim is have a secure channel to execute scripts on a remote server.
 
 ## Getting Started
-Make sure you've properly set up [golang](golang) environment, then to install twibot:
+Make sure you've properly set up [golang](https://golang.org/doc/install) environment, then to install twibot:
 
 ```bash
 $ go get github.com/mogui/twibot
@@ -88,10 +88,4 @@ twibot comes with some bundled *special* commands over the On Direct Message cha
 Any form of contribution is welcome and appreciated, though I prefer the standard pull-request flow. Thanks
 
 ## Copyright
-Copyright © 2012 Niko Usai. See LICENSE for details.   
-
-
-
-[twibot]: http://github.com/mogui/twibot
-[twitter]: https://twitter.com
-[golang]: https://golang.org/doc/install
+Copyright © 2016 Niko Usai. See LICENSE for details.   

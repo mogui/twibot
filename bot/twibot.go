@@ -1,10 +1,9 @@
 package bot
 
 import (
-	"github.com/dghubble/oauth1"
-	"github.com/dougnukem/go-twitter/twitter"
-	// TODO: now I'm using a FORK hoping that the main repo merge the PULL request to hadle direct messages
 	"fmt"
+	"github.com/dghubble/go-twitter/twitter"
+	"github.com/dghubble/oauth1"
 	"github.com/op/go-logging"
 	"os"
 )
@@ -108,7 +107,8 @@ func (t *Twibot) handleMessage(text string, user *twitter.User, actions []Action
 
 				if action.Reply {
 					log.Debug("sending reply")
-					t.client.DirectMessages.New(twitter.DirectMessageNewParams{ScreenName: user.ScreenName, Text: replyMessage})
+
+					t.client.DirectMessages.New(&twitter.DirectMessageNewParams{ScreenName: user.ScreenName, Text: replyMessage})
 				}
 			}
 			return

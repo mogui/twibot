@@ -2,7 +2,7 @@ package bot
 
 import (
 	"fmt"
-	"github.com/dougnukem/go-twitter/twitter"
+	"github.com/dghubble/go-twitter/twitter"
 	"os/exec"
 	"regexp"
 	"strings"
