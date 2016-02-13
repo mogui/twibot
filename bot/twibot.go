@@ -141,10 +141,15 @@ func (t *Twibot) handleDM(dm *twitter.DirectMessage) {
 }
 
 func (t *Twibot) handleTweet(tweet *twitter.Tweet) {
-	// TODO: to implement Mentions scanning
 	if tweet.User.ScreenName == t.conf.BotName {
 		// ignore Tweet sent by ourselves
 		return
 	}
-	t.handleMessage(tweet.Text, tweet.User, t.conf.OnMentions)
+	// scan for mentions
+	for _, mention := range tweet.Entities.UserMentions {
+		if mention.ScreenName == t.conf.BotName {
+			t.handleMessage(tweet.Text, tweet.User, t.conf.OnMentions)
+			break
+		}
+	}
 }
