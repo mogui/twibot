@@ -39,12 +39,12 @@ func (t *Twibot) Run(path string) {
 
 	// Parse config file
 	t.conf = new(Config)
-	log.Debug("Loading config from %s...\n", path)
+	log.Debugf("Loading config from %s...\n", path)
 	err := t.conf.FromJSON(path)
 	if err != nil {
 		log.Fatal(err)
 	}
-	log.Debug("Lodaded conf, Got %d actions\n", len(t.conf.OnMentions)+len(t.conf.OnDM))
+	log.Debugf("Lodaded conf, Got %d actions\n", len(t.conf.OnMentions)+len(t.conf.OnDM))
 
 	// Twitter client
 	config := oauth1.NewConfig(t.conf.ConsumerKey, t.conf.ConsumerSecret)
@@ -72,7 +72,7 @@ func (t *Twibot) Run(path string) {
 }
 
 func (t *Twibot) handleMessage(text string, user *twitter.User, actions []Action) {
-	log.Debug("received from: %s message: %s", user.ScreenName, text)
+	log.Debugf("received from: %s message: %s", user.ScreenName, text)
 
 	// check authorization
 	if !t.isAuthorized(user.ScreenName) {
@@ -90,18 +90,18 @@ func (t *Twibot) handleMessage(text string, user *twitter.User, actions []Action
 				action.BundledCommand(text, user, t)
 			} else {
 				// We run the script
-				log.Info("Executing: %s", action.Name)
+				log.Infof("Executing: %s", action.Name)
 				out, err := action.Exec()
 
 				var replyMessage string
 
 				if err != nil {
-					log.Error("executing %s: %s", action.Name, err.Error())
+					log.Errorf("executing %s: %s", action.Name, err.Error())
 					replyMessage = fmt.Sprintf("[%s] FAILED:\n%s", action.Name, err.Error())
 				} else {
-					log.Debug("executed correctly Task %s", action.Name)
+					log.Debugf("executed correctly Task %s", action.Name)
 					replyMessage = fmt.Sprintf("[%s] OK", action.Name)
-					log.Debug("output:\n%s", out)
+					log.Debugf("output:\n%s", out)
 					// TODO: decide what to do with output
 				}
 
@@ -116,7 +116,7 @@ func (t *Twibot) handleMessage(text string, user *twitter.User, actions []Action
 			log.Debug("KO")
 		}
 	}
-	log.Debug("not matched: %s ", text)
+	log.Debugf("not matched: %s ", text)
 }
 
 func (t *Twibot) isAuthorized(user string) bool {
@@ -128,7 +128,7 @@ func (t *Twibot) isAuthorized(user string) bool {
 			return true
 		}
 	}
-	log.Debug("user: %s is not authorized", user)
+	log.Debugf("user: %s is not authorized", user)
 	return false
 }
 

@@ -11,6 +11,12 @@
       "script": "ls",
       "reply": true,
       "case": true
+    },
+    {
+      "name": "Test create file",
+      "match": "new ([a-zA-Z]+)",
+      "script": "touch {1}",
+      "reply": true
     }
   ],
   "on_mentions": []

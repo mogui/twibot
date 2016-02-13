@@ -28,6 +28,12 @@ To run twibot you have to create a config file like this [one](https://github.co
       "script": "ls",
       "reply": true,
       "case": true
+    },
+    {
+      "name": "Test create file",
+      "match": "new ([a-zA-Z]+)",
+      "script": "touch {1}",
+      "reply": true
     }
   ],
   "on_mentions": [
@@ -55,7 +61,7 @@ To run twibot you have to create a config file like this [one](https://github.co
 |:-------|:------:|:--------:|:----------------------------------------------------------------------|
 | name   | string |    x     | Name of the command                                                   |
 | match  | string |    x     | a regular expression that will be run against the reiceved tweet      |
-| script | string |    x     | the executable script to be run when matched                          |
+| script | string |    x     | the executable script to be run when matched. *NOTE:*  you can use groups in the regex in order to pass theem as arguments to the script by using this noteation `{1}` just like the example in the json |
 | reply  |  bool  |          | if the bot should reply with a DM after command exec [default: false] |
 | case   |  bool  |          | if regex id case sensitive [default: false]                           |
 
