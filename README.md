@@ -60,8 +60,8 @@ To run twibot you have to create a config file like this [one](https://github.co
 | key    |  type  | required | description                                                           |
 |:-------|:------:|:--------:|:----------------------------------------------------------------------|
 | name   | string |    x     | Name of the command                                                   |
-| match  | string |    x     | a regular expression that will be run against the reiceved tweet      |
-| script | string |    x     | the executable script to be run when matched. *NOTE:*  you can use groups in the regex in order to pass theem as arguments to the script by using this noteation `{1}` just like the example in the json |
+| match  | string |    x     | a regular expression that will be run against the reiceved tweet. *NOTE:*  you can use groups in the regex in order to pass theem as arguments to the script by using this noteation `{1}` just like the example in the json    |
+| script | string |    x     | the executable script to be run when matched.  |
 | reply  |  bool  |          | if the bot should reply with a DM after command exec [default: false] |
 | case   |  bool  |          | if regex id case sensitive [default: false]                           |
 

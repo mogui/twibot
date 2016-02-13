@@ -6,7 +6,6 @@ import (
 	"os"
 )
 
-// TODO: update readme, explain how to pass argument to scripts
 // TODO: docker https://github.com/treeder/tiny-golang-docker
 func main() {
 	app := cli.NewApp()
