@@ -84,8 +84,8 @@ twibot comes with some bundled *special* commands over the On Direct Message cha
 
 
 ## TODO's
-- [ ] tutorial for setting up the twitter account
-- [ ] implement Mentions
+- [x] tutorial for setting up the twitter account
+- [x] implement Mentions
 - [ ] dockerization
 - [ ] add other bundled commands ??
 - [ ] common templates to run it at startup
